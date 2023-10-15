@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{ border: "1px solid lightgray" }}>
       <h1>
         Instagram Stati<span style={{ color: "blue" }}>stics</span> App
         <div className="inputSection">
@@ -43,7 +43,10 @@ function App() {
           <button onClick={handleProcess}>Process Data</button>
           {/* )} */}
         </div>
-        <div className="profileWrapper">
+        <div
+          className="profileWrapper"
+          style={{ border: "1px solid lightgray" }}
+        >
           {data && data.data && (
             <div className="profileContainer">
               <div className="profileImage">
@@ -76,21 +79,34 @@ function App() {
                     </tr>
                   </tbody>
                 </table>
-                <h2 style={{ textAlign: "center" }}>Latest Posts</h2>
+                <h2
+                  style={{
+                    textAlign: "center",
+                    backgroundColor: "lightgray",
+                    fontSize: "35px",
+                    color: "indigo",
+                  }}
+                >
+                  Latest Posts
+                </h2>
                 <div
                   style={{
-                    width: "70vw",
+                    width: "60vw",
                     height: "40vw",
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "center",
-                    alignItems: "center",
+                    // alignItems: "center",
                   }}
                 >
                   {data?.data?.lastPosts.map((item, index) => (
                     <div
                       className="profileImage"
-                      style={{ margin: "10px", marginTop: 0 }}
+                      style={{
+                        margin: "10px",
+                        marginTop: 0,
+                        borderRadius: "20px",
+                      }}
                       key={index}
                     >
                       <a href={item.url}>
